@@ -1,0 +1,1020 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
+    font-family: octicons-anchor;
+    src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.markdown-body a {
+    background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+    outline: 0;
+}
+
+.markdown-body strong {
+    font-weight: bold;
+}
+
+.markdown-body h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+.markdown-body img {
+    border: 0;
+}
+
+.markdown-body hr {
+    box-sizing: content-box;
+    height: 0;
+}
+
+.markdown-body pre {
+    overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+.markdown-body input {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.markdown-body html input[disabled] {
+    cursor: default;
+}
+
+.markdown-body input {
+    line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.markdown-body table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+    padding: 0;
+}
+
+.markdown-body input {
+    font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+    color: #4078c0;
+    text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+    text-decoration: underline;
+}
+
+.markdown-body hr {
+    height: 0;
+    margin: 15px 0;
+    overflow: hidden;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+    display: table;
+    content: "";
+}
+
+.markdown-body hr:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.markdown-body h1 {
+    font-size: 30px;
+}
+
+.markdown-body h2 {
+    font-size: 21px;
+}
+
+.markdown-body h3 {
+    font-size: 16px;
+}
+
+.markdown-body h4 {
+    font-size: 14px;
+}
+
+.markdown-body h5 {
+    font-size: 12px;
+}
+
+.markdown-body h6 {
+    font-size: 11px;
+}
+
+.markdown-body blockquote {
+    margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+    list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+    list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+    margin-left: 0;
+}
+
+.markdown-body code {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 12px;
+}
+
+.markdown-body pre {
+    margin-top: 0;
+    margin-bottom: 0;
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+    opacity: 0;
+}
+
+.markdown-body .octicon {
+    font: normal normal normal 16px/1 octicons-anchor;
+    display: inline-block;
+    text-decoration: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+    content: '\f05c';
+}
+
+.markdown-body:before {
+    display: table;
+    content: "";
+}
+
+.markdown-body:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.markdown-body>*:first-child {
+    margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+    margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+.markdown-body .anchor {
+    display: inline-block;
+    padding-right: 2px;
+    margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+    outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    margin-top: 1em;
+    margin-bottom: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+    color: #000;
+    vertical-align: middle;
+    visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+    text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+    visibility: visible;
+}
+
+.markdown-body h1 {
+    padding-bottom: 0.3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+    line-height: 1;
+}
+
+.markdown-body h2 {
+    padding-bottom: 0.3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+    line-height: 1;
+}
+
+.markdown-body h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+    line-height: 1.2;
+}
+
+.markdown-body h4 {
+    font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+    line-height: 1.2;
+}
+
+.markdown-body h5 {
+    font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+    line-height: 1.1;
+}
+
+.markdown-body h6 {
+    font-size: 1em;
+    color: #777;
+}
+
+.markdown-body h6 .anchor {
+    line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.markdown-body hr {
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.markdown-body li>p {
+    margin-top: 16px;
+}
+
+.markdown-body dl {
+    padding: 0;
+}
+
+.markdown-body dl dt {
+    padding: 0;
+    margin-top: 16px;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.markdown-body dl dd {
+    padding: 0 16px;
+    margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+    padding: 0 15px;
+    color: #777;
+    border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+    margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+    margin-bottom: 0;
+}
+
+.markdown-body table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+}
+
+.markdown-body table th {
+    font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: #fff;
+}
+
+.markdown-body code {
+    padding: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+}
+
+.markdown-body pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+}
+
+.markdown-body .highlight {
+    margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+    margin-bottom: 0;
+    word-break: normal;
+}
+
+.markdown-body pre {
+    word-wrap: normal;
+}
+
+.markdown-body pre code {
+    display: inline;
+    max-width: initial;
+    padding: 0;
+    margin: 0;
+    overflow: initial;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+    content: normal;
+}
+
+.markdown-body kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: solid 1px #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+    color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+    color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+    color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+    color: #333;
+}
+
+.markdown-body .pl-ent {
+    color: #63a35c;
+}
+
+.markdown-body .pl-k {
+    color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+    color: #183691;
+}
+
+.markdown-body .pl-v {
+    color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+    color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+    color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+    color: #008080;
+}
+
+.markdown-body .pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.markdown-body .pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.markdown-body .pl-md {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+    color: #1d3e81;
+}
+
+.markdown-body kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    line-height: 10px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: solid 1px #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+    color: #767676;
+    font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+    list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+    margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+    margin: 0 0.35em 0.25em -1.6em;
+    vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+    padding: 15px;
+    padding-left: 40px;
+    display: block;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    font-weight: normal;
+    background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+    background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+    display: block;
+}
+
+.markdown-body .plan-choice-free {
+    border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+    border-radius: 0 0 3px 3px;
+    border-top: 0;
+    margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+    position: absolute;
+    left: 15px;
+    top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+    color: #999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+    margin-top: 10px;
+    display: none;
+}
+
+.markdown-body :checked+.radio-label {
+    z-index: 1;
+    position: relative;
+    border-color: #4078c0;
+}
+</style><title>README</title></head><body><article class="markdown-body">
+<h1 id="eles-phpbb3-2-theme-documentation">Eles phpBB3.2 Theme Documentation</h1>
+<blockquote>
+<p>Hello there! Thank you for your interest in my theme!  </p>
+<p>If you have any questions that are beyond the scope of this help file, please feel free to email via my <a href="http://themeforest.net/user/forumthemer?ref=forumthemer">user page contact form</a> on ThemeForest.
+<em>-- The author.</em>  </p>
+</blockquote>
+<p>Current version: <strong>2.4.0</strong><br>Author homepage: <a href="http://www.bbthemr.com">bbthemr.com</a>  </p>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<!-- MarkdownTOC -->
+<ul>
+<li><a href="#foreword">Foreword</a></li>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#upload">Upload</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#dev-mode">Dev Mode</a></li>
+<li><a href="#updating">Updating</a></li>
+</ul>
+</li>
+<li><a href="#customization">Customization</a><ul>
+<li><a href="#general-settings">General Settings</a><ul>
+<li><a href="#branding">Branding</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#sidebar">Sidebar</a></li>
+<li><a href="#avatars">Avatars</a></li>
+<li><a href="#site-preloader">Site Preloader</a></li>
+</ul>
+</li>
+<li><a href="#advertisements">Advertisements</a></li>
+<li><a href="#menus">Menus</a><ul>
+<li><a href="#navigation-menu">Navigation Menu</a></li>
+<li><a href="#social-links">Social Links</a></li>
+</ul>
+</li>
+<li><a href="#style">Style</a><ul>
+<li><a href="#typography">Typography</a></li>
+<li><a href="#color-themes">Color Themes</a></li>
+<li><a href="#header-effects">Header Effects</a></li>
+</ul>
+</li>
+<li><a href="#custom-code">Custom Code</a></li>
+<li><a href="#widgets">Widgets</a></li>
+</ul>
+</li>
+<li><a href="#advanced-customization">Advanced Customization</a><ul>
+<li><a href="#setting-up-your-system">Setting Up Your System</a></li>
+<li><a href="#using-the-eles-child-theme">Using the eles-child Theme</a></li>
+<li><a href="#editing-the-source-code">Editing the Source Code</a></li>
+</ul>
+</li>
+<li><a href="#supported-extensions">Supported Extensions</a></li>
+<li><a href="#bonus-content">Bonus Content</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<!-- /MarkdownTOC -->
+<h2 id="foreword">Foreword</h2>
+<p>This documentation assumes you are familiar with the phpBB3.2 forum software.<br>You may find it useful to consult the <a href="https://www.phpbb.com/support/docs/en/3.2/ug/quickstart/"><strong>phpBB documentation</strong></a> if you are new to phpBB.  </p>
+<h2 id="getting-started">Getting Started</h2>
+<ol>
+<li><p>Download the latest version of <strong>ELES</strong> from your <a href="http://themeforest.net/downloads?ref=forumthemer"><strong>Themeforest account</strong></a>.<br><em>You probably did it by now.</em></p>
+</li>
+<li><p>Unpack the <code>eles.zip</code> archive wherever it suits you best.</p>
+</li>
+<li><p>Open the extracted folder and...</p>
+</li>
+</ol>
+<p><em>Take a coffee, sit back, and get ready.<br>This is a short and friendly one, no code snippets and HTML lessons.<br>In fact, you probably won&#39;t need to edit the source code at all.</em></p>
+<h3 id="upload">Upload</h3>
+<ol>
+<li><p><strong>Eles Style</strong></p>
+<ul>
+<li>Copy the folder <code>eles</code> from <code>styles/</code> to your forum&#39;s <code>styles</code> directory.<br>Copy the folder <code>eles-child</code> from <code>styles/</code> to your forum&#39;s <code>styles</code> directory.</li>
+<li><em>Or just copy the folder <code>styles</code> and paste it inside your forum&#39;s root directory.</em></li>
+</ul>
+</li>
+<li><p><strong>Coreframe Extension</strong></p>
+<ul>
+<li>Copy the folder <code>eles</code> from <code>ext/</code> to your forum&#39;s <code>ext</code> directory.<br><em>Or just copy the folder <code>ext</code> and paste it inside your forum&#39;s root directory.</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="install">Install</h3>
+<ol>
+<li><p>Log-in to the <strong>ACP</strong> (Administration Control Panel) of your forum, navigate to<br><strong>Customise &gt; Install Styles</strong> and install the main style by clicking on the <strong>Install style</strong> button for <strong>eles</strong>.<br>Install now the child theme, <strong>eles-child</strong> with the same procedure.</p>
+</li>
+<li><p>Navigate to <strong>General &gt; Board Settings</strong>,<br>select <strong>eles</strong> as <strong>Default style</strong> and <strong>Guest style</strong> and set <strong>Override user style</strong> to <strong>Yes</strong>.<br>Save your settings using the <em>Submit</em> button.<br><img src="img/install-theme.png" alt="install theme in phpbb"></p>
+</li>
+<li><p>Go to <strong>Customise &gt; Manage Extensions</strong> and enable the extension by clicking on the <strong>Enable</strong> button for <strong>Coreframe</strong>.<br><img src="img/install-extension.png" alt="install extension in phpbb"></p>
+</li>
+</ol>
+<h3 id="dev-mode">Dev Mode</h3>
+<p><em>Just installed the theme and the extension? <strong>Dev Mode</strong> should be enabled by default.</em>  </p>
+<p>In the <strong>ACP</strong>, go to <strong>Extensions &gt; Coreframe</strong>, enable the <strong>Dev Mode</strong> from the upper right corner and press the <em>submit</em> button.<br><em><strong>Note:</strong> When enabled, Dev Mode is red.</em>  </p>
+<p>Once you are done with customization, you should turn Dev Mode off (set it to gray).<br>It is not recommended to run your forum in production with Dev Mode enabled (red) because it can result in performance decrease.<br><img src="img/dev-mode.png" alt="enable dev mode"></p>
+<h3 id="updating">Updating</h3>
+<p><em><strong>Note:</strong> To check if you have the latest version installed on your forum navigate to<br><strong>ACP &gt; Customise &gt; Manage Extensions</strong> and click on the <strong>Details</strong> button for <strong>Coreframe</strong>.</em></p>
+<ol>
+<li><p>Log-in to the <strong>ACP</strong>, go to <strong>Extensions &gt; Coreframe</strong> and make sure <strong>Dev Mode</strong> is enabled (red).</p>
+</li>
+<li><p>In the <strong>ACP</strong>, go to <strong>Customise &gt; Manage Extensions</strong> and disable <strong>Coreframe</strong> by clicking on the <strong>Disable</strong> button for <strong>Coreframe</strong>.</p>
+</li>
+<li><p>Repeat the steps for <strong><a href="#upload">Upload</a></strong>, overwriting your old version.<br><em><strong>Note:</strong> You should back-up your <code>eles-child/theme</code> folder.</em></p>
+</li>
+<li><p>In the <strong>ACP</strong>, enable back the <strong>Coreframe</strong> extension, as explained in <strong>step 3 of <a href="#install">Install</a></strong>.</p>
+</li>
+</ol>
+<h2 id="customization">Customization</h2>
+<p>Before you begin with any customization, you&#39;ll want to make sure <a href="#dev-mode"><strong>Dev Mode</strong></a><em> is enabled.<br>_</em> <strong>Dev Mode</strong> is a good friend who lets us focus on customization while doing the dirty work._  </p>
+<p>Most of the options are self-explained inside the extension.<br>Press the <strong>question mark</strong> at the right of the option input when available to learn more about that option.  </p>
+<p>Below you find additional information about the options customizable via<br><strong>ACP &gt; Extensions &gt; Coreframe</strong>:</p>
+<h3 id="general-settings">General Settings</h3>
+<p>Adjust branding, layout and avatar settings.  </p>
+<h4 id="branding">Branding</h4>
+<p>Set custom <strong>favicon</strong>, <strong>logo image</strong> or <strong>copyright information</strong> for the theme using the <strong>Branding</strong> options.  </p>
+<ol>
+<li><p><strong>Favicon</strong> and <strong>Logo Image</strong> -- add your custom favicon and logo by inserting its url here.<br> <em><strong>Tip</strong>: Use the question mark at the right of the fields to learn more about these options.</em></p>
+</li>
+<li><p><strong>Copyright</strong> -- add your own copyright information using the html-enable field.<br> Disable <strong>Show original Copyright text</strong> to hide the information about eles and phpBB in your forum&#39;s copyright.</p>
+</li>
+</ol>
+<h4 id="layout">Layout</h4>
+<p>Change <strong>layout mode</strong>, set <strong>container width</strong> and toggle the <strong>sidebar</strong> using the <strong>Layout</strong> options.  </p>
+<p>Pick one of the three <strong>Layout modes</strong> for your forum:</p>
+<ol>
+<li><p><strong>Boxed</strong> show your forum wrapped into a container to personalize it with a background image. <strong>Tip:</strong> Add a forum background image via:<br> <strong>ACP &gt; Extensions &gt; Coreframe &gt; Style &gt; Canvas background image URL</strong>.<br> <em><strong>Note:</strong> The background image option works only with boxed layouts.</em></p>
+</li>
+<li><p><strong>Full width</strong> Let your forum span over the entire width of the browser window using this option.</p>
+</li>
+<li><p><strong>Contained</strong> Use this option to have your forum&#39;s width limited to a size.<br> <em><strong>Tip:</strong> Use the option <strong>Container Width</strong> to set the width of your forum or let the default size applied by leaving this option field empty.</em></p>
+</li>
+</ol>
+<h4 id="sidebar">Sidebar</h4>
+<ol>
+<li><p><strong>Show Sidebar</strong> - Use this option to quickly turn the sidebar on and off.</p>
+</li>
+<li><p><strong>Sidebar Position</strong> - Set the sidebar to the left or right of the content.</p>
+</li>
+<li><p><strong>Pages to show the sidebar</strong> - Pick the pages where the sidebar is visible.<br> <em><strong>Note:</strong> The Show Sidebar option must be set to true for this option to take effect.</em></p>
+</li>
+</ol>
+<h4 id="avatars">Avatars</h4>
+<p>Switch between <strong>round or square avatars</strong>, and <strong>change avatars position in posts</strong> using the <strong>Avatars</strong> options.</p>
+<h4 id="site-preloader">Site Preloader</h4>
+<p>Enable or disable the <strong>site preloader</strong>.<br><strong>Performance Tip:</strong> Disable the site preloader if you have a very big forum,<br>otherwise the users will have to wait for the entire page to load before they can see the forums.</p>
+<h3 id="advertisements">Advertisements</h3>
+<p>Insert <strong>advertisements</strong> at the top, bottom or in the widget areas -- sidebar and footer.<br>Go to <strong>ACP &gt; Extensions &gt; Coreframe &gt; Advertisements &amp; Banners</strong>, enable the ad blocks you desire and insert your HTML or AdSense code. <em>Submit</em> and voila!  </p>
+<p><em><strong>Note:</strong> It may take some time for a fresh Google AdSense code to work. Please be patient.</em>  </p>
+<p>To see the widget ad, you&#39;ll have to assign the widget to a widget area from<br><strong>ACP &gt; Extensions &gt; Coreframe &gt; Template &gt; Sidebar</strong> or <strong>Footer</strong>.</p>
+<h3 id="menus">Menus</h3>
+<p>Add your own links to the navigation menu and assign social links for the forum.</p>
+<h4 id="navigation-menu">Navigation Menu</h4>
+<p>You can add as many menu items as you like.<br>Go to <strong>ACP &gt; Extensions &gt; Coreframe &gt; Menus</strong> and add your custom menu items to the <strong>Navigation Menu</strong>.</p>
+<ul>
+<li><p><strong>To add a new menu item</strong> press the plus icon at the right of the last menu item.</p>
+</li>
+<li><p><strong>To remove a menu item</strong> press the red button at the right of it.</p>
+</li>
+</ul>
+<p><img src="img/menus.png" alt="edit menu items"></p>
+<p>You must add the link and the text attribute for every new menu item.  </p>
+<p><strong>To disable navbar auto sticking to the top</strong> use the toggle <strong>Disable sticky navbar</strong>.</p>
+<h4 id="social-links">Social Links</h4>
+<p>Social links can be added by navigating to the <strong>Social Links</strong> tab found at<br><strong>ACP &gt; Extensions &gt; Coreframe &gt; Menus</strong>.</p>
+<p>You must insert at least the <strong>Link</strong> attribute for a social link to have it displayed.<br>Social links without the link attribute are automatically hidden.  </p>
+<p>To hide the social links menu use the toggle <strong>Show Social Links menu</strong>.</p>
+<h3 id="style">Style</h3>
+<p>Customize the styling, color theme or typography of your forum.<br>You can even add your own <strong>custom css code</strong> inside the extension.<br>Go to <strong>ACP &gt; Extensions &gt; Coreframe &gt; Style</strong> to customize the aforementioned options.  </p>
+<p>Switch between rounded or flat elements using the toggle <strong>Corners style</strong>.</p>
+<h4 id="typography">Typography</h4>
+<p>You can add your own google font to the theme and use it right away.<br>Pick from over 700 <a href="https://www.google.com/fonts">Google Web Fonts</a>.</p>
+<ol>
+<li><p>Create your collection in Google Fonts and copy the entire <strong><code>&lt;link&gt;</code></strong> tag to the <strong>Google fonts link tag</strong> option. E.g.<br><em><code>&lt;link href=&#39;//fonts.googleapis.com/css?family=Lato&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;</code></em></p>
+</li>
+<li><p>Adjust font size using the <strong>Body font size</strong> option. Press the question mark at the right of it to learn how to use it.<br>Since the theme uses <strong>em</strong> units, the texts will adjust using only one option.</p>
+</li>
+<li><p>Set the font for texts using the option <strong>Body text font</strong> and change the headings font using the option <strong>Headings font</strong>.<br>Each option provides more information about its usage via the question mark button located at the rigth of it.</p>
+</li>
+</ol>
+<h4 id="color-themes">Color Themes</h4>
+<p><strong>Eles</strong> comes with two predefined types of color themes and it&#39;s possible to create your own variation of the two.</p>
+<ol>
+<li><p>First select your desired type of color theme -- for a light theme select <strong>Light Color Theme</strong>, for a dark one select <strong>Dark Color Theme</strong>.</p>
+</li>
+<li><p>Now <em>Submit</em> if you are good with the defaults, or Select <strong>Custom - Use color variables</strong> and further customize your color theme by adjusting the <strong>Color Variables</strong>.</p>
+</li>
+</ol>
+<p><em>Please note that your custom theme will inherit the parent type you selected first.</em></p>
+<h4 id="header-effects">Header Effects</h4>
+<ol>
+<li><p><strong>3D Page effect</strong> -- toggle the 3d effect on the page content.</p>
+</li>
+<li><p><strong>Header animation VFX</strong> --Enable or disable the particles VFX effect on the header image. Although the code is optimized to make the effect consume as less resources as possible, it is still possible to experience a slow speed on the page when the animation is visible. In that case it is a good idea to disable it.</p>
+</li>
+</ol>
+<h3 id="custom-code">Custom Code</h3>
+<p>You can add custom HTML, CSS or JS to your forum without changing the source code.<br>This is the <strong>recommended method</strong> because all your code will be saved to the database and it will remain intact when you update the theme and the extension.  </p>
+<p>The extension supports <strong>syntax highlight</strong> for code editing.</p>
+<ol>
+<li><h4 id="code-in-head-tag">Code in HEAD Tag</h4>
+<p>Add your meta tags, external stylesheets, custom favicons and the likes here.<br>Location: <strong>ACP &gt; Extensions &gt; Coreframe &gt; Template</strong>.</p>
+</li>
+<li><h4 id="code-before-closing-the-body-tag">Code before closing the BODY Tag</h4>
+<p>Add your external or inline JavaScript code here. <em>E.g. Google Analytics tracking code.</em><br>Location: <strong>ACP &gt; Extensions &gt; Coreframe &gt; Template</strong>.</p>
+</li>
+<li><h4 id="custom-css-code">Custom CSS code</h4>
+<p>Adjust the style of your forum by adding custom CSS code inside the extension.<br>Location: <strong>ACP &gt; Extensions &gt; Coreframe &gt; Style</strong>.</p>
+</li>
+</ol>
+<h3 id="widgets">Widgets</h3>
+<p>The theme comes with preset widgets as well as fully customizable HTML widgets.<br>These widgets can be added to the sidebar or the footer of your forum.</p>
+<ol>
+<li><p>Customize the widgets from <strong>ACP &gt; Extensions &gt; Coreframe &gt; Widgets</strong>.<br><img src="img/widgets.png" alt="customize widgets"><br>You can use the custom code widgets to add information for members and guests or even as advertisements.</p>
+</li>
+<li><p>Add the widgets to the sidebar or the footer from<br><strong>ACP &gt; Extensions &gt; Coreframe &gt; Template &gt; Sidebar</strong> or <strong>Footer</strong>.<br><img src="img/widget-areas.png" alt="add widgets to the theme"></p>
+</li>
+</ol>
+<h2 id="advanced-customization">Advanced Customization</h2>
+<p>This section assumes you have some basic experince with HTML &amp; CSS.<br>Although it mentions and involves having to deal with more advanced topics like NodeJS, SASS, Bower and GruntJS, there&#39;s nothing difficult you need to do.  </p>
+<p><em>Since the styling is done in a modern css preprocessor, it is recommended to get the basics before trying to edit it. The syntax is very simple and clean: <strong><a href="http://sass-lang.com/guide">Learn the basics of SASS</a></strong>.</em>  </p>
+<p>If you uploaded the <code>style/eles-child</code> folder when installing the theme you are ready to continue. If not, first upload it as described in the <strong><a href="#upload">Upload</a></strong> section and install the child theme using <strong>step 1</strong> of the <strong><a href="#install">Install</a></strong> section.  </p>
+<h3 id="setting-up-your-system">Setting Up Your System</h3>
+<p>To edit the scss file you need to have a number of modern technologies installed on your system. These are lightweight and don&#39;t slow your system&#39;s performance.  </p>
+<p><em><strong>Note:</strong> We name <strong>Command Line</strong> an interface for typing commands directly to a computer&#39;s operating system. On Linux and OS X it is the Terminal, on Windows it is the Command Prompt.</em>  </p>
+<p><em><strong>Remark:</strong> You need to run the commands as admin. In Windows, right click on the windows logo from the taskbar and pick <strong>Command Prompt (Admin)</strong>. In Linux and OS X simply type <strong><code>sudo</code></strong> before the command.</em>  </p>
+<ol>
+<li><p>Open the Command Line -- Terminal or Command Prompt (Admin)</p>
+</li>
+<li><p>Install Ruby -- <a href="http://rubyinstaller.org/">http://rubyinstaller.org/</a>.</p>
+</li>
+<li><p>Install NodeJS -- <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
+</li>
+<li><p>Install SASS -- <a href="http://sass-lang.com/install/">http://sass-lang.com/install/</a>.<br> Type <strong><code>gem install sass</code></strong> in command line as admin.</p>
+</li>
+<li><p>Install Grunt -- <a href="http://gruntjs.com/getting-started/">http://gruntjs.com/getting-started/</a>.<br> Type <strong><code>npm install -g grunt-cli</code></strong> in command line as admin.</p>
+</li>
+<li><p>Install Bower -- <a href="http://bower.io/#install-bower">http://bower.io/#install-bower</a>.<br> Type <strong><code>npm install -g bower</code></strong> in command line as admin.</p>
+</li>
+<li><p>Open the <code>eles-child</code> directory in command line<br> <em>Linux and Mac OS X users: navigate to the directory using the Terminal.</em><br> <em>Windows users: navigate to the <code>styles</code> directory using the explorer, shift+right click on the <code>eles-child</code> directory and pick <strong>Open command window here</strong>.</em></p>
+<ol>
+<li>Type <strong><code>npm install</code></strong> to install the required dependencies.</li>
+<li>Type <strong><code>grunt buildcss</code></strong> to compile the sass file to css.</li>
+<li>Type <strong><code>grunt</code></strong> to watch and compile every time you save the sass file.<br> <em>To stop the continuous grunt task press <strong>Ctrl+C</strong> in command line.</em></li>
+</ol>
+</li>
+</ol>
+<h3 id="using-the-eles-child-theme">Using the eles-child Theme</h3>
+<p>You need to use the <strong>eles-child</strong> theme if you change to the source code.<br>To do this, follow <strong>step 2</strong> in the <strong><a href="#install">Install</a></strong> section and select eles-child this time.  </p>
+<p><em><strong>Remark:</strong> It is required that you run <code>grunt buildcss</code> via command line as described above at <strong>step 7.iii.</strong> before using the child theme.</em></p>
+<h3 id="editing-the-source-code">Editing the Source Code</h3>
+<p>You can customize all HTML template files and the stylesheet files.  </p>
+<ul>
+<li><strong>Before editing a HTML template file:</strong><br>  Copy the HTML files you wish to modify from <code>eles/template/</code> to <code>eles-child/template/</code>.</li>
+<li><strong>Before editing a SCSS stylesheet file:</strong><br>Open the <code>eles-child</code> directory via Command Line and run the <code>grunt</code> command to enable automatic compilation upon file save.</li>
+</ul>
+<p><strong>Important Tip for Developers</strong><br>Do not upload the folders <code>eles-child/node_modules/</code> and <code>eles-child/theme/vendor/</code> to your server! These are only needed for development.</p>
+<h2 id="supported-extensions">Supported Extensions</h2>
+<p>The Eles theme is compatible with a many phpBB 3.2 third party extensions which you can add to your forum. Extensions are a great way to add more features to your forum and make it even more user-friendly.  </p>
+<p>Extensions support is a continuous task and you are encouraged to create a new issue in our <a href="https://github.com/forumthemer/eles-phpbb-forum-theme/issues">issue tracker</a> if your favorite extension is not yet supported by Eles.  </p>
+<p><strong>Eles currently supports the following extensions:</strong></p>
+<ul>
+<li><a href="https://www.phpbb.com/customise/db/extension/boardannouncements/">Board Announcements</a> by phpBB</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/pages/">Pages</a> by phpBB</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/boardrules/">Board Rules</a> by phpBB</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/auto_groups/">Auto Groups</a> by phpBB</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/googleanalytics/">Google Analytics</a> by phpBB</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/about_us/">About Us</a> by Crizzo</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/advanced_bbcode_box/">Advanced BBCode Box 3.1</a> by VSE</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/topicpreview/">Topic Preview</a> by VSE</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/quick_login/">Quick Login</a> by PayBas</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/avatar_in_last_post/">Avatar in last post</a> by bb3mobi</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/shareon/">Share On</a> by Vinny</li>
+<li><a href="https://github.com/Tacitus89/ajaxsmilies">Ajax Smilies</a> by Tacitus89</li>
+<li><a href="http://www.phpbb3bbcodes.com/viewtopic.php?f=61&amp;t=2575">Adsense for phpBB 3.1</a> by Stoker (partially supported)</li>
+<li><a href="https://github.com/satanasov/postlove">phpBB 3.1 Post Love</a> by satanasov (partially supported)</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/recent_topics_2/">Recent Topics</a> by PayBas</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/quickedit/">Quick Edit</a> by Marc</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/email_list/">Email list</a> by david63</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/elonw/">External Links Open in New Window</a> by RMcGirr83</li>
+<li><a href="https://www.phpbb.com/community/viewtopic.php?f=456&amp;t=2269621">phpBB3 SEO Sitemap</a> by Shredder</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/seo_meta_description/">SEO Meta Description</a> by bb3mobi</li>
+<li><a href="https://www.phpbb.com/community/viewtopic.php?f=456&amp;t=2281451">mChat Extension</a> by dmzx</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/nickvergessen_newspage/">phpBB 3.1 - NV Newspage Extension</a> by nickvergessen</li>
+<li><a href="https://www.phpbb.com/community/viewtopic.php?f=456&amp;t=2215511">phpBB 3.1 Event medals</a> by satanasov</li>
+<li><a href="https://www.phpbb.com/customise/db/extension/ajax_shoutbox/">Ajax Shoutbox</a> by paul999</li>
+</ul>
+<p><strong>Disclaimer:</strong> Customizing and implementing the extensions is not part of the item support!</p>
+<p>The term &quot;supported extensions&quot; confirms that Eles comes with built-in styling rules for these extensions, which should work inside the theme without breaking the layout.  </p>
+<p>It also confirms the extensions were installed and tested on our development and testing environments.</p>
+<h2 id="bonus-content">Bonus Content</h2>
+<p>After installing the theme and the extension on your forum you can proceed to <a href="toggle-color-theme.md">add the color-toggle button</a> from the demo to the sidebar of your Eles powered forum.</p>
+<h2 id="license">License</h2>
+<p>The <strong>ELES Theme</strong> is licensed under the <a href="http://themeforest.net/licenses/standard?ref=forumthemer">Envato Standard Regular License</a>.</p>
+<p><strong>Copyright Notice</strong><br>Copyright &copy; 2015-2016 <a href="http://www.bbthemr.com">bbthemr</a> / <a href="http://themeforest.net/user/forumthemer?ref=forumthemer">forumthemer</a>.  </p>
+<p>This software is protected by international copyright laws.<br>Any unauthorized use or attempts to reverse-engineer, copy or implement parts of this intellectual property are strictly prohibited.  </p>
+<p><strong>Limitation of Liability</strong><br>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  </p>
+
+</article></body></html>

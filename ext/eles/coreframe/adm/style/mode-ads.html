@@ -1,0 +1,85 @@
+<!-- INCLUDE inc/c-header.html -->
+
+<h1>{L_C_ACP_ADS}</h1>
+<p>Add advertisements and banners.</p>
+
+<fieldset>
+  <legend>BLOCK AT PAGE TOP</legend>
+
+  {% set OPT_NAME = 'c_ad_pagetop_on' %}
+  {% set OPT_DATA = C_AD_PAGETOP_ON %}
+  {% set OPT_VALUE = C_AD_PAGETOP %}
+  <div class="coderadio">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-default toggle on
+        <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+        <input name="{OPT_NAME}" type="radio" value="1"
+          <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+        Enable
+      </label>
+      <label class="btn btn-default toggle off
+        <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+        <input name="{OPT_NAME}" type="radio" value="0"
+          <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+        Disable
+      </label>
+    </div>
+    {% set OPT_NAME = 'c_ad_pagetop' %}
+    <textarea class="editor" name="{OPT_NAME}">{OPT_VALUE}</textarea>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>BLOCK AT PAGE END</legend>
+
+  {% set OPT_NAME = 'c_ad_pageend_on' %}
+  {% set OPT_DATA = C_AD_PAGEEND_ON %}
+  {% set OPT_VALUE = C_AD_PAGEEND %}
+  <div class="coderadio">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-default toggle on
+        <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+        <input name="{OPT_NAME}" type="radio" value="1"
+          <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+        Enable
+      </label>
+      <label class="btn btn-default toggle off
+        <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+        <input name="{OPT_NAME}" type="radio" value="0"
+          <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+        Disable
+      </label>
+    </div>
+    {% set OPT_NAME = 'c_ad_pageend' %}
+    <textarea class="editor" name="{OPT_NAME}">{OPT_VALUE}</textarea>
+  </div>
+</fieldset>
+
+
+<fieldset>
+  <legend>BLOCK IN WIDGETS</legend>
+
+  {% set OPT_NAME = 'c_ad_widgets_on' %}
+  {% set OPT_DATA = C_AD_WIDGETS_ON %}
+  {% set OPT_VALUE = C_AD_WIDGETS %}
+  <div class="coderadio">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-default toggle on
+        <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+        <input name="{OPT_NAME}" type="radio" value="1"
+          <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+        Enable
+      </label>
+      <label class="btn btn-default toggle off
+        <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+        <input name="{OPT_NAME}" type="radio" value="0"
+          <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+        Disable
+      </label>
+    </div>
+    {% set OPT_NAME = 'c_ad_widgets' %}
+    <textarea class="editor" name="{OPT_NAME}">{OPT_VALUE}</textarea>
+  </div>
+</fieldset>
+
+<!-- INCLUDE inc/c-footer.html -->

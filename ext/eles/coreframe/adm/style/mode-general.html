@@ -1,0 +1,410 @@
+<!-- INCLUDE inc/c-header.html -->
+
+<h1>{L_C_ACP_GENERAL}</h1>
+<p>Set general theme options.</p>
+
+<div class="row">
+  <div class="col-lg-6">
+
+    <fieldset>
+      <legend>Preloader</legend>
+
+      {% set OPT_NAME = 'c_preloader_on' %}
+      {% set OPT_DATA = C_PRELOADER_ON %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Site Preloader:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default
+              <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="1"
+                <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+              On
+            </label>
+            <label class="btn btn-default
+              <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="0"
+                <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+              Off
+            </label>
+          </div>
+        </dd>
+      </dl>
+    </fieldset>
+
+    <fieldset>
+      <legend>Branding</legend>
+
+      {% set OPT_NAME = 'c_favicon_url' %}
+      {% set OPT_DATA = C_FAVICON_URL %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Favicon url:</label>
+        </dt>
+        <dd>
+          <div class="input-group">
+            <input
+              id="{OPT_NAME}" name="{OPT_NAME}"
+              type="text"
+              class="form-control"
+              value="{OPT_DATA}"
+              placeholder="favicon.png"
+            />
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-question-circle"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="info">
+                  <strong>Tip:</strong>
+                  You can also replace the file <kbd>favicon.png</kbd> in
+                  <kbd>phpBB3/styles/eles/theme/images/</kbd> with your favicon
+                  and leave this option empty.
+                </div>
+              </div>
+            </div>
+          </div>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_logo_image' %}
+      {% set OPT_DATA = C_LOGO_IMAGE %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Logo image:</label>
+        </dt>
+        <dd>
+          <div class="input-group">
+            <input
+              id="{OPT_NAME}" name="{OPT_NAME}"
+              type="text"
+              class="form-control"
+              value="{OPT_DATA}"
+              placeholder="logo.png"
+            />
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-question-circle"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="info">
+                  <strong>Tip:</strong>
+                  You can also replace the file <kbd>logo.png</kbd> in
+                  <kbd>phpBB3/styles/eles/theme/images/</kbd> with your logo
+                  and leave this option empty.
+                </div>
+              </div>
+            </div>
+          </div>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_logo_siteinfo' %}
+      {% set OPT_DATA = C_LOGO_SITEINFO %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Show site info under logo:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default
+              <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="1"
+                <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+              On
+            </label>
+            <label class="btn btn-default
+              <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="0"
+                <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+              Off
+            </label>
+          </div>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_copyright_text' %}
+      {% set OPT_DATA = C_COPYRIGHT_TEXT %}
+      <dl class="coderadio on">
+        <dt>
+          <label for="{OPT_NAME}">Copyright text:</label>
+        </dt>
+        <dd>
+          <textarea id="{OPT_NAME}" class="editor" name="{OPT_NAME}">{OPT_DATA}</textarea>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_copyright_on' %}
+      {% set OPT_DATA = C_COPYRIGHT_ON %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Show original Copyright text:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default
+              <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="1"
+                <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+              On
+            </label>
+            <label class="btn btn-default
+              <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="0"
+                <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+              Off
+            </label>
+          </div>
+        </dd>
+      </dl>
+    </fieldset>
+
+  </div>
+
+  <div class="col-lg-6">
+
+    <fieldset>
+      <legend>Layout</legend>
+
+      {% set OPT_NAME = 'c_layout_mode' %}
+      {% set OPT_DATA = C_LAYOUT_MODE %}
+      <dl>
+        <dt>
+          <label for="{$OPT}_full">Layout mode:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            {% set OPT_VALUE = "boxed" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              {OPT_VALUE|capitalize}
+            </label>
+            {% set OPT_VALUE = "full" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              Full width
+            </label>
+            {% set OPT_VALUE = "contained" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              {OPT_VALUE|capitalize}
+            </label>
+          </div>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_layout_width' %}
+      {% set OPT_DATA = C_LAYOUT_WIDTH %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">
+            Container width:
+          </label>
+        </dt>
+        <dd>
+          <div class="input-group">
+            <input
+              id="{OPT_NAME}" name="{OPT_NAME}"
+              type="text"
+              class="form-control"
+              value="{OPT_DATA}"
+            />
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-question-circle"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="info">
+                  Please use
+                  <a href="http://www.w3schools.com/cssref/css_units.asp" target="_blank" title="W3Schools CSS Units Page">
+                    css units
+                    <i class="fa fa-external-link-square"></i>
+                  </a>
+                  <br />
+                  E.g. <kbd>1200px</kbd> or <kbd>80%</kbd>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </fieldset>
+
+    <fieldset>
+      <legend>Avatars</legend>
+
+      {% set OPT_NAME = 'c_avatars_shape' %}
+      {% set OPT_DATA = C_AVATARS_SHAPE %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Avatar image shape:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            {% set OPT_VALUE = "img-circle" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              Circle
+            </label>
+            {% set OPT_VALUE = "" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              Square
+            </label>
+          </div>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_avatars_pos' %}
+      {% set OPT_DATA = C_AVATARS_POS %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Position in posts:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            {% set OPT_VALUE = "profile-left" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              Left
+            </label>
+            {% set OPT_VALUE = "" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              Right
+            </label>
+          </div>
+        </dd>
+      </dl>
+    </fieldset>
+
+    <fieldset>
+      <legend>Sidebar</legend>
+
+      {% set OPT_NAME = 'c_sidebar_on' %}
+      {% set OPT_DATA = C_SIDEBAR_ON %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Show Sidebar:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default
+              <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="1"
+                <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+              On
+            </label>
+            <label class="btn btn-default
+              <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio" value="0"
+                <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+              Off
+            </label>
+          </div>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_sidebar_pos' %}
+      {% set OPT_DATA = C_SIDEBAR_POS %}
+      <dl>
+        <dt>
+          <label for="{OPT_NAME}">Sidebar Position:</label>
+        </dt>
+        <dd>
+          <div class="btn-group" data-toggle="buttons">
+            {% set OPT_VALUE = "left" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              {OPT_VALUE|capitalize}
+            </label>
+            {% set OPT_VALUE = "" %}
+            <label class="btn btn-default
+              <!-- IF OPT_DATA == OPT_VALUE --> active<!-- ENDIF -->">
+              <input name="{OPT_NAME}" type="radio"
+                value="{OPT_VALUE}"
+                <!-- IF OPT_DATA == OPT_VALUE -->checked="checked"<!-- ENDIF -->>
+              Right
+            </label>
+          </div>
+        </dd>
+      </dl>
+
+      {% set OPT_NAME = 'c_sidebar_pages' %}
+      {% set OPT_DATA = C_SIDEBAR_PAGES %}
+      <dl class="vertical">
+        <dt>
+          <label for="{OPT_NAME}">Pages to show the sidebar:</label>
+        </dt>
+        <dd>
+          {% set OPT_VARS = ['index', 'viewforum', 'viewtopic', 'memberlist', 'search'] %}
+          <div class="btn-group" data-toggle="buttons" data-component-type="multicheckbox">
+            {% for OPT_VAR in OPT_VARS %}
+            <label class="btn btn-default
+              {% if OPT_VAR in OPT_DATA %} active{% endif %}">
+              <input
+                type="checkbox"
+                data-component-name="multicheckbox--sidebar-pages"
+                name="{OPT_NAME}[]"
+                value="{OPT_VAR}"
+                {% if OPT_VAR in OPT_DATA %}checked="checked"{% endif %}
+              />
+              {OPT_VAR|capitalize}
+            </label>
+            {% endfor %}
+          </div>
+
+          {% set OPT_VARS = ['ucp', 'mcp', 'page', 'posting', 'faq', 'report', 'viewonline'] %}
+          <div class="btn-group" data-toggle="buttons" data-component-type="multicheckbox">
+            {% for OPT_VAR in OPT_VARS %}
+            <label class="btn btn-default
+              {% if OPT_VAR in OPT_DATA %} active{% endif %}">
+              <input
+                type="checkbox"
+                data-component-name="multicheckbox--sidebar-pages"
+                name="{OPT_NAME}[]"
+                value="{OPT_VAR}"
+                {% if OPT_VAR in OPT_DATA %}checked="checked"{% endif %}
+              />
+              {% if OPT_VAR == 'page' %}
+                {% set OPT_VAR = 'pages' %}
+              {% endif %}
+              {OPT_VAR|capitalize}
+            </label>
+            {% endfor %}
+          </div>
+
+        </dd>
+      </dl>
+    </fieldset>
+
+  </div>
+</div>
+
+<!-- INCLUDE inc/c-footer.html -->

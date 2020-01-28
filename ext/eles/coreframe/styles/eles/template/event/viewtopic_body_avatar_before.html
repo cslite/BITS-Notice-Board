@@ -1,0 +1,11 @@
+<!-- IF !postrow.POSTER_AVATAR -->
+<div class="avatar auto-avatar">
+  <!-- IF postrow.U_POST_AUTHOR -->
+    <a href="{postrow.U_POST_AUTHOR}">
+      <div class="img {C_AVATARS_SHAPE}">{{ postrow.POST_AUTHOR[0:2] }}</div>
+    </a>
+  <!-- ELSE -->
+    <div class="img {C_AVATARS_SHAPE}">{{ postrow.POST_AUTHOR[0:2] }}</div>
+  <!-- ENDIF -->
+</div>
+<!-- ENDIF -->

@@ -1,0 +1,9 @@
+{%  set C_LAYOUT_CLASS = (C_LAYOUT_MODE == "contained") ? " container" : '' %}
+{%  set C_SIDEBAR_CONTAINER = C_SIDEBAR_ON ? " sided" : '' %}
+
+<section class="main {{C_LAYOUT_CLASS ~ C_SIDEBAR_CONTAINER}}">
+<div class="inner{% if C_STYLE_OFFSET_ON %} header-offset{% endif %}">
+
+{%  set C_BODY_CLASS = C_SIDEBAR_ON ? "col-sm-9" : '' %}
+{%  set C_BODY_ALIGN = (C_SIDEBAR_ON && C_SIDEBAR_POS == "left") ? " rightside col-sm-push-3" : " leftside" %}
+<div id="page-body-wrapper" role="main" class="{{C_BODY_CLASS ~ C_BODY_ALIGN}}">

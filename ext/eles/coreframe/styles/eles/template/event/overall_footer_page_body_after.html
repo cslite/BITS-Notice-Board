@@ -1,0 +1,21 @@
+<!-- IF C_AD_PAGEEND_ON -->
+<div class="bottom-block">
+	<div class="inner">{C_AD_PAGEEND}</div>
+</div>
+<!-- ENDIF -->
+
+</div>
+<!-- #page-body-wrapper -->
+
+<!-- IF C_SIDEBAR_ON -->
+{%  set C_SIDEBAR_ALIGN = (C_SIDEBAR_ON && C_SIDEBAR_POS == "left") ? "leftside col-sm-pull-9" : "rightside" %}
+<div id="page-sidebar" class="col-sm-3 {C_SIDEBAR_ALIGN}">
+	<!-- INCLUDE inc/sidebar.html -->
+</div>
+<!-- ENDIF -->
+
+</div><!-- .inner -->
+{% if C_STYLE_OFFSET_ON %}<div class="header-offset-shadow"></div>{% endif %}
+
+</section>
+<!-- .main -->

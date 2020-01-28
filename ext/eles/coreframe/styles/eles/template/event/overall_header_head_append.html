@@ -1,0 +1,15 @@
+<!-- IF C_CODE_HEADTAG_ON -->
+{C_CODE_HEADTAG}
+<!-- ENDIF -->
+
+{% set C_FAVICON =
+    C_FAVICON_URL ? C_FAVICON_URL : T_THEME_PATH ~ '/images/favicon.png' %}
+<link
+  href="{C_FAVICON}?assets_version={T_ASSETS_VERSION}"
+  rel="shortcut icon">
+
+{C_FONTS_URL}
+
+<!-- IF C_STYLE_THEME !== 'original' -->
+  <!-- INCLUDECSS @eles_coreframe/colors.css.php?{C_STYLE_QUERY} -->
+<!-- ENDIF -->

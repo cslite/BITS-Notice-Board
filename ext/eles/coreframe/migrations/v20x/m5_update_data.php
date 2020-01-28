@@ -1,0 +1,2 @@
+<?php
+namespace eles\coreframe\migrations\v20x; class m5_update_data extends \phpbb\db\migration\migration { public static function depends_on() { return array('\\eles\\coreframe\\migrations\\v15x\\m4_update_data'); } public function update_data() { $spa6d4d7 = array(); $spa6d4d7[] = array('config.add', array('c_wid_custom4_title', '')); $spa6d4d7[] = array('config_text.add', array('c_wid_custom4_code', '')); $spa6d4d7[] = array('config.add', array('c_wid_custom5_title', '')); $spa6d4d7[] = array('config_text.add', array('c_wid_custom5_code', '')); return $spa6d4d7; } }

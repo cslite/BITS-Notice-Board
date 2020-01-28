@@ -1,0 +1,2 @@
+<?php
+namespace eles\coreframe\migrations\v10x; class m1_initial_schema extends \phpbb\db\migration\migration { public static function depends_on() { return array('\\phpbb\\db\\migration\\data\\v320\\v320'); } public function update_schema() { return array(); } public function revert_schema() { return array(); } }

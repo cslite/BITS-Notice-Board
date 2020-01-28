@@ -1,0 +1,18 @@
+<!-- BEGIN c_sidebar_widgets -->
+
+  <!-- IF c_sidebar_widgets.WID === 'auth' -->
+      <!-- DEFINE $OPT = 'c_sidebar_widgets' -->
+      <!-- INCLUDE @eles_coreframe/inc/widgets.html -->
+
+  <!-- ELSE IF c_sidebar_widgets.WID !== 'none' -->
+  <div class="widget widget-{c_sidebar_widgets.WID}">
+    <!-- IF c_sidebar_widgets.TITLE -->
+      <h3 class="widget-title">{c_sidebar_widgets.TITLE}</h3>
+    <!-- ENDIF -->
+    <div class="widget-body">
+      <!-- DEFINE $OPT = 'c_sidebar_widgets' -->
+      <!-- INCLUDE @eles_coreframe/inc/widgets.html -->
+    </div>
+  </div>
+  <!-- ENDIF -->
+<!-- END c_sidebar_widgets -->

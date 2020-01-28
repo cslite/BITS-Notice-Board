@@ -1,0 +1,64 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified" role="tablist">
+  <li role="presentation" class="active">
+    <a href="#{$OPT}-wtab-now" aria-controls="{$OPT}-wtab-now" role="tab" data-toggle="tab">
+      <i class="fa fa-refresh"></i>
+    </a>
+  </li>
+  <li role="presentation">
+    <a href="#{$OPT}-wtab-stats" aria-controls="{$OPT}-wtab-stats" role="tab" data-toggle="tab">
+      <i class="fa fa-bar-chart"></i>
+    </a>
+  </li>
+  <li role="presentation">
+    <a href="#{$OPT}-wtab-events" aria-controls="{$OPT}-wtab-events" role="tab" data-toggle="tab">
+      <i class="fa fa-birthday-cake"></i>
+    </a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="{$OPT}-wtab-now">
+
+    <div class="online-list">
+      {INFOTABS_TOTAL_USERS_ONLINE}
+      <hr />
+      {INFOTABS_LOGGED_IN_USER_LIST}
+      <hr />
+      <em>{INFOTABS_RECORD_USERS}</em>
+    </div>
+
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="{$OPT}-wtab-stats">
+
+    <div class="statistics">
+      {INFOTABS_TOTAL_POSTS}
+      <br />
+      {INFOTABS_TOTAL_TOPICS}
+      <br />
+      {INFOTABS_TOTAL_USERS}
+      <hr />
+      {INFOTABS_NEWEST_USER}
+    </div>
+
+  </div>
+  <div role="tabpanel" class="events-list tab-pane fade" id="{$OPT}-wtab-events">
+
+    <div class="events-wrapper">
+      <!-- IF .birthdays -->
+        {L_CONGRATULATIONS}{L_COLON}
+        <strong>
+          <!-- BEGIN birthdays -->
+            {birthdays.USERNAME}
+            <!-- IF birthdays.AGE !== '' --> ({birthdays.AGE})<!-- ENDIF -->
+            <!-- IF not birthdays.S_LAST_ROW -->, <!-- ENDIF -->
+          <!-- END birthdays -->
+          </strong>
+        <!-- ELSE -->
+        {L_NO_BIRTHDAYS}
+      <!-- ENDIF -->
+    </div>
+
+  </div>
+</div>

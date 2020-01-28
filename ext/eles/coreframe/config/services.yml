@@ -1,0 +1,43 @@
+services:
+    eles.coreframe.listener:
+        class: eles\coreframe\event\listener
+        arguments:
+            - '@eles.coreframe.ads_service'
+            - '@eles.coreframe.sidebar_service'
+            - '@eles.coreframe.widgets_service'
+            - '@dbal.conn'
+            - '@cache.driver'
+            - '@config'
+            - '@config_text'
+            - '@controller.helper'
+            - '@request'
+            - '@template'
+            - '@language'
+        tags:
+            - { name: event.listener }
+
+    eles.coreframe.widgets_service:
+        class: eles\coreframe\services\widgets_service
+        arguments:
+            - '@auth'
+            - '@dbal.conn'
+            - '@config'
+            - '@template'
+            - '@user'
+            - '@language'
+            - %core.root_path%
+            - %core.php_ext%
+
+    eles.coreframe.sidebar_service:
+        class: eles\coreframe\services\sidebar_service
+        arguments:
+            - '@user'
+            - '@config'
+            - '@config_text'
+
+    eles.coreframe.ads_service:
+        class: eles\coreframe\services\ads_service
+        arguments:
+            - '@user'
+            - '@config'
+            - '@config_text'

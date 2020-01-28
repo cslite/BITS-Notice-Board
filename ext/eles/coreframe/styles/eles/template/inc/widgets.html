@@ -1,0 +1,28 @@
+<!-- IF $OPT == 'c_sidebar_widgets' -->
+  {% set WIDGET %}{c_sidebar_widgets.WID}{% endset %}
+  {% set WIDGET_CONTENT %}{c_sidebar_widgets.CONTENT}{% endset %}
+  <!-- ELSEIF $OPT == 'c_footer_widgets' -->
+  {% set WIDGET %}{c_footer_widgets.WID}{% endset %}
+  {% set WIDGET_CONTENT %}{c_footer_widgets.CONTENT}{% endset %}
+<!-- ENDIF -->
+
+<!-- IF WIDGET == 'adblock' -->
+  <!-- IF C_AD_WIDGETS_ON -->{C_AD_WIDGETS}<!-- ENDIF -->
+
+<!-- ELSEIF WIDGET == 'auth' -->
+  <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+    <!-- INCLUDE @eles_coreframe/widgets/{WIDGET}.html -->
+  <!-- ENDIF -->
+
+<!-- ELSEIF WIDGET == 'infotabs' -->
+  <!-- INCLUDE @eles_coreframe/widgets/{WIDGET}.html -->
+
+<!-- ELSEIF WIDGET == 'forums' -->
+  <!-- INCLUDE @eles_coreframe/widgets/{WIDGET}.html -->
+
+<!-- ELSEIF WIDGET == 'recents' -->
+  <!-- INCLUDE @eles_coreframe/widgets/{WIDGET}.html -->
+
+<!-- ELSE -->
+  {WIDGET_CONTENT}
+<!-- ENDIF -->

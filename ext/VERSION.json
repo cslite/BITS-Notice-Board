@@ -1,0 +1,11 @@
+{
+  "stable": {
+    "2.4": {
+      "current": "2.4.0",
+      "download": "http://themeforest.net/downloads?ref=forumthemer",
+      "announcement": "http://themeforest.net/item/eles-phpbb-31-theme/13769708?ref=forumthemer",
+      "eol": null,
+      "security": false
+    }
+  }
+}

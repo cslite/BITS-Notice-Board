@@ -1,0 +1,13 @@
+<script id="c-dynjs" type="text/javascript">
+  Eles.props.headerVfx.configFile = '{ROOT_PATH}styles/eles/template/js/vfxconfig.json';
+{% if C_NOSTICK_NAV %}
+  Eles.stick_nav = false;
+{% endif %}
+{% if ! C_STYLE_HERO_VFX %}
+  Eles.header_vfx = false;
+{% endif %}
+</script>
+
+<!-- IF C_CODE_BODYEND_ON -->
+{C_CODE_BODYEND}
+<!-- ENDIF -->

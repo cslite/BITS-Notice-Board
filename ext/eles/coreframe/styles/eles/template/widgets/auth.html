@@ -1,0 +1,34 @@
+<div class="widget widget-{c_sidebar_widgets.WID}">
+  <h3 class="widget-title">
+    <a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a> &middot;
+    <!-- IF S_REGISTER_ENABLED --><a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF -->
+  </h3>
+  <div class="widget-body">
+    <form method="post" action="{S_LOGIN_ACTION}">
+      <fieldset class="clearfix">
+        <label for="username" class="formline">
+          <span>{L_USERNAME}{L_COLON}</span>
+          <input type="text" name="username" id="username" size="10" class="inputbox" title="{L_USERNAME}" />
+        </label>
+        <label for="password" class="formline">
+          <span>{L_PASSWORD}{L_COLON}</span>
+          <input type="password" name="password" id="password" size="10" class="inputbox" title="{L_PASSWORD}" autocomplete="off" />
+        </label>
+
+        <div class="left">
+          <!-- IF U_SEND_PASSWORD -->
+            <a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a>
+          <!-- ENDIF -->
+          <!-- IF S_AUTOLOGIN_ENABLED -->
+            <label for="autologin">
+              <input type="checkbox" name="autologin" id="autologin" />
+              {L_LOG_ME_IN}
+            </label>
+          <!-- ENDIF -->
+        </div>
+        <input type="submit" name="login" value="{L_LOGIN}" class="button2" />
+        {S_LOGIN_REDIRECT}
+      </fieldset>
+    </form>
+  </div>
+</div>

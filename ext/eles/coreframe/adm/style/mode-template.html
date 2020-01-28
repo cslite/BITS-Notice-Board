@@ -1,0 +1,130 @@
+<!-- INCLUDE inc/c-header.html -->
+
+<h1>{L_C_ACP_TEMPLATE}</h1>
+<p>Set template related settings.</p>
+
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#codeopts" aria-controls="codeopts" data-toggle="tab">Custom Code</a></li>
+  <li><a href="#sidebaropts" aria-controls="sidebaropts" data-toggle="tab">Sidebar</a></li>
+  <li><a href="#footeropts" aria-controls="footeropts" data-toggle="tab">Footer</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="codeopts">
+
+    <fieldset>
+      <legend>Code in &lt;head&gt;</legend>
+
+      {% set OPT_NAME = 'c_code_headtag_on' %}
+      {% set OPT_DATA = C_CODE_HEADTAG_ON %}
+      {% set OPT_VALUE = C_CODE_HEADTAG %}
+      <div class="coderadio">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default toggle on
+            <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+            <input name="{OPT_NAME}" type="radio" value="1"
+              <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+            Enable
+          </label>
+          <label class="btn btn-default toggle off
+            <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+            <input name="{OPT_NAME}" type="radio" value="0"
+              <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+            Disable
+          </label>
+        </div>
+        {% set OPT_NAME = 'c_code_headtag' %}
+        <textarea class="editor" name="{OPT_NAME}">{OPT_VALUE}</textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Code before &lt;/body&gt;</legend>
+
+      {% set OPT_NAME = 'c_code_bodyend_on' %}
+      {% set OPT_DATA = C_CODE_BODYEND_ON %}
+      {% set OPT_VALUE = C_CODE_BODYEND %}
+      <div class="coderadio">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default toggle on
+            <!-- IF OPT_DATA --> active<!-- ENDIF -->">
+            <input name="{OPT_NAME}" type="radio" value="1"
+              <!-- IF OPT_DATA --> checked="checked"<!-- ENDIF -->>
+            Enable
+          </label>
+          <label class="btn btn-default toggle off
+            <!-- IF !OPT_DATA --> active<!-- ENDIF -->">
+            <input name="{OPT_NAME}" type="radio" value="0"
+              <!-- IF !OPT_DATA -->checked="checked"<!-- ENDIF -->>
+            Disable
+          </label>
+        </div>
+        {% set OPT_NAME = 'c_code_bodyend' %}
+        <textarea class="editor" name="{OPT_NAME}">{OPT_VALUE}</textarea>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <!-- DEFINE $OPT = 'c_sidebar_widgets' -->
+  <div class="tab-pane fade" id="sidebaropts">
+    <fieldset>
+      <legend>Sidebar Widgets</legend>
+      <dl>
+        <dt>
+          <h6>Assign Widgets</h6>
+          <span>Select the desired widget for each widget area.</span>
+          <p><strong>Note:</strong> a maximum of <strong>5</strong> widgets are allowed.</p>
+        </dt>
+        <dd>
+          <ul class="list-group">
+          <!-- BEGIN c_sidebar_widgets -->
+            <li class="list-group-item inline-select">
+              <label for="sidebar_area_{c_sidebar_widgets.S_ROW_COUNT}">
+                Widget Area {{c_sidebar_widgets.S_ROW_COUNT+1}}
+              </label>
+              <select id="sidebar_area_{c_sidebar_widgets.S_ROW_COUNT}" name="{$OPT}[]" class="form-control">
+                <!-- INCLUDE inc/opts-wids.html -->
+              </select>
+            </li>
+          <!-- END c_sidebar_widgets -->
+          </ul>
+        </dl>
+      </dl>
+    </fieldset>
+  </div>
+
+  <!-- DEFINE $OPT = 'c_footer_widgets' -->
+  <div class="tab-pane fade" id="footeropts">
+    <fieldset>
+      <legend>Footer Columns</legend>
+      <dl>
+        <dt>
+          <h6>Assign Widgets</h6>
+          <span>Select the desired widget for each footer column.</span>
+        </dt>
+        <dd>
+          <ul class="list-group">
+          <!-- BEGIN c_footer_widgets -->
+            <li class="list-group-item inline-select">
+              <label for="footer_area_{c_footer_widgets.S_ROW_COUNT}">
+                Column {{c_footer_widgets.S_ROW_COUNT+1}}
+              </label>
+              <select id="footer_area_{c_footer_widgets.S_ROW_COUNT}" name="{$OPT}[]" class="form-control">
+                <!-- INCLUDE inc/opts-wids.html -->
+              </select>
+            </li>
+          <!-- END c_footer_widgets -->
+          </ul>
+        </dl>
+      </dl>
+    </fieldset>
+  </div>
+
+
+<!-- INCLUDE inc/c-footer.html -->
+
+
