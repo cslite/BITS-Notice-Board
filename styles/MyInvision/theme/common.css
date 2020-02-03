@@ -179,9 +179,9 @@ a:hover	{ text-decoration: underline; }
 
 .site_logo {
 	background-repeat: no-repeat;
-	display: inline-block;
-	width: 149px;
-	height: 52px;
+	display: table-row;
+	width: 75px;
+	height: 75px;
 }
 
 /* Site description and logo */
