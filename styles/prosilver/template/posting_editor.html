@@ -52,16 +52,16 @@
 		<!-- ENDIF -->
 		<!-- EVENT posting_editor_smilies_after -->
 		<!-- IF BBCODE_STATUS -->
-		<div class="bbcode-status">
-			<!-- IF .smiley --><hr /><!-- ENDIF -->
-			{BBCODE_STATUS}<br />
-			<!-- IF S_BBCODE_ALLOWED -->
-				{IMG_STATUS}<br />
-				{FLASH_STATUS}<br />
-				{URL_STATUS}<br />
-			<!-- ENDIF -->
-			{SMILIES_STATUS}
-		</div>
+<!--		<div class="bbcode-status">-->
+<!--			&lt;!&ndash; IF .smiley &ndash;&gt;<hr />&lt;!&ndash; ENDIF &ndash;&gt;-->
+<!--			{BBCODE_STATUS}<br />-->
+<!--			&lt;!&ndash; IF S_BBCODE_ALLOWED &ndash;&gt;-->
+<!--				{IMG_STATUS}<br />-->
+<!--				{FLASH_STATUS}<br />-->
+<!--				{URL_STATUS}<br />-->
+<!--			&lt;!&ndash; ENDIF &ndash;&gt;-->
+<!--			{SMILIES_STATUS}-->
+<!--		</div>-->
 		<!-- ENDIF -->
 		<!-- EVENT posting_editor_bbcode_status_after -->
 		<!-- IF S_EDIT_DRAFT || S_DISPLAY_REVIEW -->
@@ -133,25 +133,25 @@
 		<fieldset class="fields1">
 			<!-- EVENT posting_editor_options_prepend -->
 			<!-- IF S_BBCODE_ALLOWED -->
-				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
+<!--				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>-->
 			<!-- ENDIF -->
 			<!-- IF S_SMILIES_ALLOWED -->
-				<div><label for="disable_smilies"><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label></div>
+<!--				<div><label for="disable_smilies"><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label></div>-->
 			<!-- ENDIF -->
 			<!-- IF S_LINKS_ALLOWED -->
-				<div><label for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label></div>
+<!--				<div><label for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label></div>-->
 			<!-- ENDIF -->
 			<!-- IF S_SIG_ALLOWED -->
-				<div><label for="attach_sig"><input type="checkbox" name="attach_sig" id="attach_sig"{S_SIGNATURE_CHECKED} /> {L_ATTACH_SIG}</label></div>
+<!--				<div><label for="attach_sig"><input type="checkbox" name="attach_sig" id="attach_sig"{S_SIGNATURE_CHECKED} /> {L_ATTACH_SIG}</label></div>-->
 			<!-- ENDIF -->
 			<!-- IF S_NOTIFY_ALLOWED -->
-				<div><label for="notify"><input type="checkbox" name="notify" id="notify"{S_NOTIFY_CHECKED} /> {L_NOTIFY_REPLY}</label></div>
+<!--				<div><label for="notify"><input type="checkbox" name="notify" id="notify"{S_NOTIFY_CHECKED} /> {L_NOTIFY_REPLY}</label></div>-->
 			<!-- ENDIF -->
 			<!-- IF S_LOCK_TOPIC_ALLOWED -->
-				<div><label for="lock_topic"><input type="checkbox" name="lock_topic" id="lock_topic"{S_LOCK_TOPIC_CHECKED} /> {L_LOCK_TOPIC}</label></div>
+<!--				<div><label for="lock_topic"><input type="checkbox" name="lock_topic" id="lock_topic"{S_LOCK_TOPIC_CHECKED} /> {L_LOCK_TOPIC}</label></div>-->
 			<!-- ENDIF -->
 			<!-- IF S_LOCK_POST_ALLOWED -->
-				<div><label for="lock_post"><input type="checkbox" name="lock_post" id="lock_post"{S_LOCK_POST_CHECKED} /> {L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</label></div>
+<!--				<div><label for="lock_post"><input type="checkbox" name="lock_post" id="lock_post"{S_LOCK_POST_CHECKED} /> {L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</label></div>-->
 			<!-- ENDIF -->
 
 			<!-- IF S_TYPE_TOGGLE or S_TOPIC_TYPE_ANNOUNCE or S_TOPIC_TYPE_STICKY -->

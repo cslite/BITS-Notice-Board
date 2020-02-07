@@ -1,0 +1,25 @@
+{
+    "name": "tg528/postmany",
+    "type": "phpbb-extension",
+    "description": "Add the possibility of being able to post into multiple forums at the same time.",
+    "version": "1.0.0",
+    "time": "2020-02-05",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Tussank Gupta",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "phpbb/phpbb": ">=3.1.6",
+        "composer/installers": "~1.0.0"
+    },
+    "extra": {
+        "display-name": "Post Many",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.1.6"
+        }
+    }
+}

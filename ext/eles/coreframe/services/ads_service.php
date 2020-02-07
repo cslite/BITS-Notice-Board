@@ -1,2 +1,0 @@
-<?php
-namespace eles\coreframe\services; class ads_service { protected $user; protected $config; protected $config_text; public function __construct(\phpbb\user $user, \phpbb\config\config $config, \phpbb\config\db_text $config_text) { $this->user = $user; $this->config = $config; $this->config_text = $config_text; } public function is_visible($sp762b0e) { $spc112fd = str_replace('.php', '', $this->user->page['page_name']); $sp597a34 = array('ucp', 'mcp'); $sp169688 = in_array($spc112fd, $sp597a34) !== FALSE; return !$sp169688; } }

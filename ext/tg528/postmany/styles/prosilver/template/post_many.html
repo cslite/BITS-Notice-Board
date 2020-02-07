@@ -1,0 +1,24 @@
+<div class="panel bg3" id="multipost-panel">
+	<div class="inner">
+		<!-- IF S_SHOW_MULTIPOST_BOX -->
+		<p>{L_ADD_MULTIPOST_EXPLAIN}</p>
+		<!-- ENDIF -->
+
+		<fieldset class="fields2">
+
+			<!-- IF S_SHOW_MULTIPOST_BOX -->
+			  {% for tforum in forumlist %}
+			      <input id="tforum_{{ tforum.id }}"
+			             type="checkbox"
+			             {% if tforum.id == currforum %}checked onclick="return false"{% endif %}
+			             name="tforum_{{ tforum.id }}"/>
+			      <label style="font-weight:100"
+			             for="tforum_{{ tforum.id }}">{{ tforum.name }}</label>
+			  		<br>
+			  {% endfor %}
+
+			<!-- ENDIF -->
+		</fieldset>
+
+	</div>
+</div>

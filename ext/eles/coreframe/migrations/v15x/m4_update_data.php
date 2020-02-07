@@ -1,2 +1,0 @@
-<?php
-namespace eles\coreframe\migrations\v15x; class m4_update_data extends \phpbb\db\migration\migration { public static function depends_on() { return array('\\eles\\coreframe\\migrations\\v10x\\m3_initial_module'); } public function update_data() { $spa6d4d7 = array(); $spa6d4d7[] = array('config_text.add', array('c_sidebar_pages', '')); return $spa6d4d7; } }

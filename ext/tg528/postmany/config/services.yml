@@ -1,0 +1,10 @@
+services:
+    tg528.topicdescription.listener:
+        class: tg528\postmany\event\listener
+        arguments:
+            - '@auth'
+            - '@request'
+            - '@template'
+            - '@user'
+        tags:
+            - { name: event.listener }

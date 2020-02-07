@@ -63,6 +63,7 @@ a.forumtitle {
 	font-size: 1.2em;
 	font-weight: bold;
 	text-decoration: none;
+	line-height: 2.5;
 }
 
 a.forumtitle:hover {

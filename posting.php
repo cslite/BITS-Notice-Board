@@ -1456,12 +1456,15 @@ if ($submit || $preview || $refresh)
 			// post's poster, not the poster of the current post). See: PHPBB3-11769 for more information.
 			$post_author_name = ((!$user->data['is_registered'] || $mode == 'edit') && $post_data['username'] !== '') ? $post_data['username'] : '';
 
+			$post_forums_list = array($forum_id);
+
 			/**
 			* This event allows you to define errors before the post action is performed
 			*
 			* @event core.posting_modify_submit_post_before
 			* @var	array	post_data	Array with post data
 			* @var	array	poll		Array with poll data
+             * @var array   post_forums_list    Array with forum_id list
 			* @var	array	data		Array with post data going to be stored in the database
 			* @var	string	mode		What action to take if the form is submitted
 			*				post|reply|quote|edit|delete
@@ -1487,11 +1490,24 @@ if ($submit || $preview || $refresh)
 				'post_author_name',
 				'update_message',
 				'update_subject',
+                'post_forums_list',
 			);
 			extract($phpbb_dispatcher->trigger_event('core.posting_modify_submit_post_before', compact($vars)));
 
-			// The last parameter tells submit_post if search indexer has to be run
-			$redirect_url = submit_post($mode, $post_data['post_subject'], $post_author_name, $post_data['topic_type'], $poll, $data, $update_message, ($update_message || $update_subject) ? true : false);
+			$redirect_url = '';
+            // The last parameter tells submit_post if search indexer has to be run
+			if($mode == 'post'){
+			    foreach($post_forums_list as $forum_id_i){
+			        $data['forum_id'] = $forum_id_i;
+                    $redirect_url = submit_post($mode, $post_data['post_subject'], $post_author_name, $post_data['topic_type'], $poll, $data, $update_message, ($update_message || $update_subject) ? true : false);
+                }
+            }
+			else{
+                $redirect_url = submit_post($mode, $post_data['post_subject'], $post_author_name, $post_data['topic_type'], $poll, $data, $update_message, ($update_message || $update_subject) ? true : false);
+            }
+
+
+
 
 			/**
 			* This event allows you to define errors after the post action is performed
