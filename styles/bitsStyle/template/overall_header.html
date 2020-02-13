@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=1200, initial-scale=0.5" />
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+<!-- <meta name="viewport" content="width=1200, initial-scale=0.5" /> -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- Chrome, Firefox OS and Opera -->
 <meta name="theme-color" content="#444547">
 <!-- Windows Phone -->
@@ -101,15 +101,107 @@
                 </a>
             </div>
             {% EVENT overall_header_headerbar_before %}
-            <!-- <ul class="mainNav">
-                <li class="sel"><a href="">About Us</a></li>
+            <ul class="mainNav">
+                <!-- <li class="sel"><a href="">About Us</a></li>
                     <li ><a href="">Contact Us</a></li>
                 <li class="sel"></li>
                 <li class="sel"></li>
                 <li class="sel"></li>
                 <li class="sel"></li>
-                <li class="sel"></li>
-            </ul> -->
+                <li class="sel"></li> -->
+
+		{% if U_ACP %}
+			<li >
+				<a href="{{ U_ACP }}" title="{{ lang('ACP') }}">
+					<i class="icon fa-cogs fa-fw" aria-hidden="true"></i>{{ lang('ACP_SHORT') }}
+				</a>
+			</li>
+		{% endif %}
+		{% if U_MCP %}
+			<li >
+				<a href="{{ U_MCP }}" title="{{ lang('MCP') }}">
+					<i class="icon fa-gavel fa-fw" aria-hidden="true"></i>{{ lang('MCP_SHORT') }}
+				</a>
+			</li>
+		{% endif %}
+<!-- 
+	{% if S_REGISTERED_USER %}
+		{% EVENT navbar_header_user_profile_prepend %}
+		<li id="username_logged_in" class="rightside {% if CURRENT_USER_AVATAR %} no-bulletin{% endif %}" data-skip-responsive="true">
+			{% EVENT navbar_header_username_prepend %}
+			<div class="header-profile dropdown-container">
+				<a href="{{ U_PROFILE }}" class="header-avatar dropdown-trigger">{% if CURRENT_USER_AVATAR %}{{ CURRENT_USER_AVATAR }} {% endif %} {{ CURRENT_USERNAME_SIMPLE }}</a>
+				<div class="dropdown">
+					<div class="pointer"><div class="pointer-inner"></div></div>
+					<ul class="dropdown-contents" role="menu">
+						{% if U_RESTORE_PERMISSIONS %}
+							<li>
+								<a href="{{ U_RESTORE_PERMISSIONS }}">
+									<i class="icon fa-refresh fa-fw" aria-hidden="true"></i><span>{{ lang('RESTORE_PERMISSIONS') }}</span>
+								</a>
+							</li>
+						{% endif %}
+
+					{% EVENT navbar_header_profile_list_before %}
+
+						<li>
+							<a href="{{ U_PROFILE }}" title="{{ lang('PROFILE') }}" role="menuitem">
+								<i class="icon fa-sliders fa-fw" aria-hidden="true"></i><span>{{ lang('PROFILE') }}</span>
+							</a>
+						</li>
+						{% if U_USER_PROFILE %}
+						<li>
+							<a href="{{ U_USER_PROFILE }}" title="{{ lang('READ_PROFILE') }}" role="menuitem">
+								<i class="icon fa-user fa-fw" aria-hidden="true"></i><span>{{ lang('READ_PROFILE') }}</span>
+							</a>
+						</li>
+						{% endif %}
+						{% EVENT navbar_header_profile_list_after %}
+
+						<li class="separator"></li>
+						<li>
+							<a href="{{ U_LOGIN_LOGOUT }}" title="{{ lang('LOGIN_LOGOUT') }}" accesskey="x" role="menuitem">
+								<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>{{ lang('LOGIN_LOGOUT') }}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			{% EVENT navbar_header_username_append %}
+		</li>
+			{% if S_DISPLAY_PM %}
+	<li class="rightside" data-skip-responsive="true">
+				<a href="{{ U_PRIVATEMSGS }}" role="menuitem">
+					<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><span>{{ lang('PRIVATE_MESSAGES') }} </span><strong class="badge{% if not PRIVATE_MESSAGE_COUNT %} hidden{% endif %}">{{ PRIVATE_MESSAGE_COUNT }}</strong>
+				</a>
+			</li>
+		{% endif %}
+		{% if S_NOTIFICATIONS_DISPLAY %}
+			<li class="dropdown-container dropdown-{{ S_CONTENT_FLOW_END }} rightside" data-skip-responsive="true">
+				<a href="{{ U_VIEW_ALL_NOTIFICATIONS }}" id="notification_list_button" class="dropdown-trigger">
+					<i class="icon fa-bell fa-fw" aria-hidden="true"></i><span>{{ lang('NOTIFICATIONS') }} </span><strong class="badge{% if not NOTIFICATIONS_COUNT %} hidden{% endif %}">{{ NOTIFICATIONS_COUNT }}</strong>
+				</a>
+				{% INCLUDE 'notification_dropdown.html' %}
+			</li>
+		{% endif %}
+		{% EVENT navbar_header_user_profile_append %}
+	{% elseif not S_IS_BOT %}
+		<li class="rightside"  data-skip-responsive="true">
+			<a href="{{ U_LOGIN_LOGOUT }}" title="{{ lang('LOGIN_LOGOUT') }}" accesskey="x" role="menuitem">
+				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>{{ lang('LOGIN_LOGOUT') }}</span>
+			</a>
+		</li>
+		{% if S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) %}
+			<li class="rightside" data-skip-responsive="true">
+				<a href="{{ U_REGISTER }}" role="menuitem">
+					<i class="icon fa-pencil-square-o  fa-fw" aria-hidden="true"></i><span>{{ lang('REGISTER') }}</span>
+				</a>
+			</li>
+		{% endif %}
+		{% EVENT navbar_header_logged_out_content %}
+	{% endif %} -->
+	
+            </ul>
             {% EVENT overall_header_headerbar_after %}
             <ul class="siteInfo">
                 <li>
@@ -165,7 +257,7 @@
                 Template
             </h1> -->
             <div class="bannerCont">
-                <img src="{{ T_THEME_PATH }}/images/insideBanner.jpg" alt="banner" width="1184" height="176" />
+                <img src="{{ T_THEME_PATH }}/images/insideBanner.jpg" alt="banner" />
                 <!-- <div class="qts">
                     Template
                 </div> -->
