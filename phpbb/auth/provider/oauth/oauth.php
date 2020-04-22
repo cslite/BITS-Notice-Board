@@ -193,10 +193,14 @@ class oauth extends base
 		if ($this->is_set_code($service))
 		{
 			$this->service_providers[$service_name]->set_external_service_provider($service);
-
+            $provider_str = (string) utf8_strtolower($provider);
 			try
 			{
-				$unique_id = $this->service_providers[$service_name]->perform_auth_login();
+			    $res_auth = $this->service_providers[$service_name]->perform_auth_login();
+                if($provider_str == "google")
+			        $unique_id = $res_auth['id'];
+                else
+                    $unique_id = $res_auth;
 			}
 			catch (exception $e)
 			{
@@ -214,7 +218,7 @@ class oauth extends base
 			 * so values are quoted in the SQL WHERE statement.
 			 */
 			$data = [
-				'provider'			=> (string) utf8_strtolower($provider),
+				'provider'			=> $provider_str,
 				'oauth_provider_id'	=> (string) $unique_id
 			];
 
@@ -230,6 +234,9 @@ class oauth extends base
 				'login_link_oauth_service'	=> $provider,
 			);
 
+			$email_not_allowed_error = false;
+            $new_account_created = false;
+            $new_user_id = 0;
 			/**
 			 * Event is triggered before check if provider is already associated with an account
 			 *
@@ -246,8 +253,30 @@ class oauth extends base
 				'data',
 				'redirect_data',
 				'service',
+                'res_auth',
+                'email_not_allowed_error',
+                'new_account_created',
+                'new_user_id',
 			];
 			extract($this->dispatcher->trigger_event('core.oauth_login_after_check_if_provider_id_has_match', compact($vars)));
+
+			if($email_not_allowed_error){
+                return [
+                    'status'		=> LOGIN_ERROR_EXTERNAL_AUTH,
+                    'error_msg'		=> 'AUTH_PROVIDER_OAUTH_ERROR_INVALID_DOMAIN',
+                    'user_row'		=> ['user_id' => ANONYMOUS],
+                ];
+            }
+
+			if($new_account_created){
+                $data = [
+                    'provider'			=> $provider_str,
+                    'oauth_provider_id'	=> (string) $unique_id,
+                    'user_id'           => (int) $new_user_id
+                ];
+                $this->link_account_perform_link($data);
+                $storage->set_user_id($data['user_id']);
+            }
 
 			if (!$row)
 			{
@@ -666,13 +695,24 @@ class oauth extends base
 		}
 	}
 
-	/**
+
+    public function dumpy($anything)
+    {
+        global $phpbb_root_path;
+        $log_file = $phpbb_root_path . 'store/my_ext.log';
+        $entry = date('Y-m-d H:i:s ') . print_r($anything, true) . PHP_EOL;
+        file_put_contents($log_file, $entry, FILE_APPEND | LOCK_EX);
+    }
+
+
+    /**
 	 * Performs the query that inserts an account link
 	 *
 	 * @param	array	$data	This array is passed to db->sql_build_array
 	 */
 	protected function link_account_perform_link(array $data)
 	{
+//	    $this->dumpy($data);
 		// Check if the external account is already associated with other user
 		$sql = 'SELECT user_id
 			FROM ' . $this->oauth_account_table . "

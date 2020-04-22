@@ -44,9 +44,9 @@
 }
 .headerWrapper .headerWrapperFix .mainNav{
 	position:absolute;
-    width: 1200px;
+    width: 100%;
 	bottom:4px;
-	border-right: solid 1px #cecece;
+	/*border-right: solid 1px #cecece;*/
 	z-index:999;
 }
 .headerWrapper .headerWrapperFix .mainNav li{
@@ -585,7 +585,7 @@
 	/*background: url(../images/insideBannerBg.gif) repeat-x 0 0;*/
 }
 .bannerInsideWrapper .bannerInsideFix{
-	height: 200px;
+	/*height: 200px;*/
     margin: auto;
     position: relative;
     width: 1200px;

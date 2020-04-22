@@ -23,5 +23,6 @@ $lang = array_merge(
 	$lang, array(
 	'RECENT_TOPICS'     => 'Recent Notices',
 	'RT_NO_TOPICS'		=> 'There are no new notices to display.',
+	'POSTED_BY'			=> 'Posted by',
 	)
 );

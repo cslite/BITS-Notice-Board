@@ -164,9 +164,21 @@
 
 	.logo {
 		/* change display value to inline-block to show logo */
+		/*display: none;*/
+		/*float: none;*/
+		padding: 0px;
+	}
+
+	.headerWrapper .headerWrapperFix .commonNav {
 		display: none;
-		float: none;
-		padding: 10px;
+	}
+
+	.bannerInsideWrapper .bannerInsideFix .bannerCont{
+		display: none;
+	}
+
+	.bannerInsideWrapper .bannerInsideFix{
+		height: 15px;
 	}
 
 	.site-description h1, .site-description p {
@@ -558,6 +570,9 @@
 
 @media (min-width: 700px) {
 	.postbody { width: 70%; }
+	.bannerInsideWrapper .bannerInsideFix{
+		height: 200px;
+	}
 }
 
 @media (min-width: 850px) {

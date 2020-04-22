@@ -89,7 +89,7 @@ class google extends base
 		}
 
 		// Return the unique identifier
-		return $result['id'];
+		return $result;
 	}
 
 	/**

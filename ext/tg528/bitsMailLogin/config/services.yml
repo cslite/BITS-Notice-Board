@@ -1,6 +1,6 @@
 services:
-    tg528.postmany.listener:
-        class: tg528\postmany\event\listener
+    tg528.bitsMailLogin.listener:
+        class: tg528\bitsMailLogin\event\listener
         arguments:
             - '@auth'
             - '@request'

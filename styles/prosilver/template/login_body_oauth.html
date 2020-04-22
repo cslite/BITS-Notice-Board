@@ -1,6 +1,13 @@
 <br>
 <div class="content">
 	{% for oauth in oauth %}
-		<a href="{{ oauth.REDIRECT_URL }}" class="button2">{{ oauth.SERVICE_NAME }}</a>
+		{% if oauth.SERVICE_NAME == 'Google' %}
+		<a href="{{ oauth.REDIRECT_URL }}" title="BITS Email  Login" class="btnBM">
+                            <img src="https://accounts.google.com/favicon.ico" alt="" width="24" height="24">
+                        BITS Email  Login
+                        </a>
+		{% else %}
+			<a href="{{ oauth.REDIRECT_URL }}" class="button2">{{ oauth.SERVICE_NAME }}</a>
+		{% endif %}	
 	{% endfor %}
 </div>

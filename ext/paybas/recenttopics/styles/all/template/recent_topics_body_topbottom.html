@@ -27,7 +27,7 @@
 					<dt><div class="list-inner">{{ lang('RECENT_TOPICS') }}</div></dt>
 					<!-- <dd class="posts">{{ lang('REPLIES') }}</dd> -->
 					<dd class="views">{{ lang('VIEWS') }}</dd>
-					<dd class="lastpost"><span>{{ lang('LAST_POST') }}</span></dd>
+					<dd class="lastpost"><span>{{ lang('POSTED_BY') }}</span></dd>
 				</dl>
 				<a href="{{ U_EXT_COLCAT_COLLAPSE_URL }}"
 				   class="collapse-btn collapse-{% if S_EXT_COLCAT_HIDDEN %}show{% else %}hide{% endif %}"
@@ -89,7 +89,7 @@
 
 						<div class="responsive-hide">
 							{% if recent_topics.S_HAS_POLL %}<i class="icon fa-bar-chart fa-fw" aria-hidden="true"></i>{% endif %}
-							{{ lang('POST_BY_AUTHOR') }} {{ recent_topics.TOPIC_AUTHOR_FULL }} &raquo; {{ recent_topics.FIRST_POST_TIME }}
+							<!-- {{ lang('POST_BY_AUTHOR') }} {{ recent_topics.TOPIC_AUTHOR_FULL }} &raquo; {{ recent_topics.FIRST_POST_TIME }} -->
 							{% if recent_topics.S_POST_GLOBAL and FORUM_ID != recent_topics.FORUM_ID %} &raquo; {{ lang('IN') }} <a href="{{ recent_topics.U_VIEW_FORUM }}">{{ recent_topics.FORUM_NAME }}</a>
 							{% elseif recent_topics.U_VIEW_FORUM and recent_topics.FORUM_NAME %} &raquo; {{ lang('IN') }} {% for parent_forums in recent_topics.parent_forums %}<a href="{{ parent_forums.U_VIEW_FORUM }}">{{ parent_forums.FORUM_NAME }}</a> &raquo; {% endfor %}<a href="{{ recent_topics.U_VIEW_FORUM }}">{{ recent_topics.FORUM_NAME }}</a>{% endif %}
 						</div>

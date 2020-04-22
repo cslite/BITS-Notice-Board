@@ -1,3 +1,0 @@
-parameters:
-    phpbb.autogroups.tables.autogroups_rules: '%core.table_prefix%autogroups_rules'
-    phpbb.autogroups.tables.autogroups_types: '%core.table_prefix%autogroups_types'
