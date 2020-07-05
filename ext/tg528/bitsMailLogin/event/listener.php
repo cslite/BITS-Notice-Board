@@ -106,6 +106,16 @@ class listener implements EventSubscriberInterface
 		return $gpList[$gpName];
 	}
 
+	public function dept2gpId($deptstr, $gpList){
+		$gpName = "Faculty_".$deptstr;
+		// $this->dumpy($gpName);
+		// $this->dumpy($gpList);
+		if(array_key_exists($gpName, $gpList))
+			return $gpList[$gpName];
+		else
+			return -1;
+	}
+
 	public function decode_campus_id($campusId, $gpList){
 		$start_year = substr($campusId,0,4);
 		$brinfo = substr($campusId,4,4);
@@ -146,24 +156,28 @@ class listener implements EventSubscriberInterface
 			include($phpbb_root_path . 'includes/functions_user.' . $phpEx);
 		}
 		$group_list = $this->get_group_ids();
+		// $this->dumpy($group_list);
 		if($event['data']['provider'] == 'google'){
 			$google_data = $event['res_auth'];
 			$this->dumpy($event['res_auth']);
 			$row = $event['row'];
 			$email_id = $google_data['email'];
 			if(!$row){
+
+				$user_id = $this->get_user_id($email_id);
+				if($user_id != -1){
+					//a user with this email already exists but needs linking
+					$event['new_account_created'] = true;
+					$event['new_user_id'] = (int) $user_id;
+					$row = [];
+					$row['user_id'] = $user_id;
+					$event['row'] = $row;
+				}
 				//No linked user, so we need to create an account
-				if(array_key_exists('hd', $google_data)){
+				else if(array_key_exists('hd', $google_data)){
 					if($google_data['hd'] == 'pilani.bits-pilani.ac.in'){
 						$row = [];
-						$user_id = $this->create_new_user($google_data['email'],$group_list['REGISTERED']);
 						
-						// $this->dumpy($user_id);
-						//Account created, now we need to link it with this bits mail account
-						$event['new_account_created'] = true;
-						$event['new_user_id'] = (int) $user_id;
-						//Linking done, now we need to subscribe the user to relevant groups
-
 						//first connect to the external database containing tables from erp
 						if($this->connect_external_db()){
 							//Check the STUDENT_TABLE
@@ -174,6 +188,15 @@ class listener implements EventSubscriberInterface
 								//Entry found in STUDENT_TABLE
 								$add_group_list = $this->decode_campus_id($trow['CAMPUS_ID'],$group_list);
 								// $this->dumpy($add_group_list);
+
+								$user_id = $this->create_new_user($google_data['email'],$group_list['REGISTERED']);
+								
+								// $this->dumpy($user_id);
+								//Account created, now we need to link it with this bits mail account
+								$event['new_account_created'] = true;
+								$event['new_user_id'] = (int) $user_id;
+								//Linking done, now we need to subscribe the user to relevant groups
+
 								foreach($add_group_list as $curr_grp){
 									group_user_add($curr_grp, $user_id);	
 								}
@@ -181,16 +204,44 @@ class listener implements EventSubscriberInterface
 							}
 							else{
 								//Check the FACULTY_TABLE
-								$fac_sql = "SELECT EMAIL FROM FACULTY_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
+								$fac_sql = "SELECT EMPLID FROM FACULTY_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
 								$res = $this->$extDbConnection->sql_query($fac_sql);
 								$trow = $this->$extDbConnection->sql_fetchrow($res);
 								if($trow){
 									//Entry found in FACULTY_TABLE
 									$fac_gp_id = $group_list['Faculty'];
+
+									$fac_dept_sql = "SELECT DEPT FROM FACULTY_DEPT_TABLE WHERE EMPLID = '".$trow['EMPLID']."'";
+
+									$res_subquery = $this->$extDbConnection->sql_query($fac_dept_sql);
+									$trow_subquery = $this->$extDbConnection->sql_fetchrow($res_subquery);
+									
+									$user_id = $this->create_new_user($google_data['email'],$group_list['REGISTERED']);
+						
+									// $this->dumpy($user_id);
+									//Account created, now we need to link it with this bits mail account
+									$event['new_account_created'] = true;
+									$event['new_user_id'] = (int) $user_id;
+									//Linking done, now we need to subscribe the user to relevant groups
+									
 									group_user_add($fac_gp_id, $user_id,false,false,true);
 
+									while($trow_subquery){
+										$add_group = $this->dept2gpId($trow_subquery['DEPT'],$group_list);
+										if($add_group != -1)
+											group_user_add($add_group,$user_id);
+										$trow_subquery = $this->$extDbConnection->sql_fetchrow($res_subquery);
+									}
 								}
 								else{
+									$user_id = $this->create_new_user($google_data['email'],$group_list['REGISTERED']);
+						
+									// $this->dumpy($user_id);
+									//Account created, now we need to link it with this bits mail account
+									$event['new_account_created'] = true;
+									$event['new_user_id'] = (int) $user_id;
+									//Linking done, now we need to subscribe the user to relevant groups
+
 									//TODO_later: Check the OTHERS_TABLE
 									//This can be done later if required.		
 								}
@@ -219,54 +270,88 @@ class listener implements EventSubscriberInterface
 				}
 				$this->dumpy($subd_groups);
 				if($this->connect_external_db()){
-					//Check the STUDENT_TABLE
-					$stud_sql = "SELECT CAMPUS_ID FROM STUDENT_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
-					$res = $this->$extDbConnection->sql_query($stud_sql);
+
+					$othr_sql = "SELECT EMAIL FROM OTHERS_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
+					$res = $this->$extDbConnection->sql_query($othr_sql);
 					$trow = $this->$extDbConnection->sql_fetchrow($res);
-					if($trow){
-						//Entry found in STUDENT_TABLE
-						$add_group_list = $this->decode_campus_id($trow['CAMPUS_ID'],$group_list);
-						$this->dumpy($add_group_list);
-						//add new groups
-						foreach($add_group_list as $curr_grp){
-							if(!in_array($curr_grp,$subd_groups)){
-								group_user_add($curr_grp, $user_id);	
-							}
-						}
-						//remove old groups
-						foreach($subd_groups as $curr_grp){
-							if(!in_array($curr_grp,$add_group_list)){
-								group_user_del($curr_grp,$user_id);
-							}
-						}
-					}
-					else{
-						//Check the FACULTY_TABLE
-						$fac_sql = "SELECT EMAIL FROM FACULTY_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
-						$res = $this->$extDbConnection->sql_query($fac_sql);
+					
+					if(!$trow){
+						//not found in Others table
+						//Check the STUDENT_TABLE
+						$stud_sql = "SELECT CAMPUS_ID FROM STUDENT_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
+						$res = $this->$extDbConnection->sql_query($stud_sql);
 						$trow = $this->$extDbConnection->sql_fetchrow($res);
-						$fac_gp_id = $group_list['Faculty'];
 						if($trow){
-							//Entry found in FACULTY_TABLE
-							if(!in_array($fac_gp_id, $subd_groups)){
-								group_user_add($fac_gp_id, $user_id,false,false,true);
+							//Entry found in STUDENT_TABLE
+							$add_group_list = $this->decode_campus_id($trow['CAMPUS_ID'],$group_list);
+							$this->dumpy($add_group_list);
+							//add new groups
+							foreach($add_group_list as $curr_grp){
+								if(!in_array($curr_grp,$subd_groups)){
+									group_user_add($curr_grp, $user_id);	
+								}
 							}
+							//remove old groups
 							foreach($subd_groups as $curr_grp){
-								if($curr_grp != $fac_gp_id){
+								if(!in_array($curr_grp,$add_group_list)){
 									group_user_del($curr_grp,$user_id);
 								}
 							}
 						}
 						else{
-							$othr_sql = "SELECT EMAIL FROM OTHERS_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
-							$res = $this->$extDbConnection->sql_query($othr_sql);
+							//Check the FACULTY_TABLE
+							$fac_sql = "SELECT EMPLID FROM FACULTY_TABLE WHERE EMAIL = '".strtolower($email_id)."'";
+							$res = $this->$extDbConnection->sql_query($fac_sql);
 							$trow = $this->$extDbConnection->sql_fetchrow($res);
-							if(!$trow){
+
+							if($trow){
+								//Entry found in FACULTY_TABLE
+
+								$fac_gp_id = $group_list['Faculty'];
+
+								$fac_dept_sql = "SELECT DEPT FROM FACULTY_DEPT_TABLE WHERE EMPLID = '".strtolower($trow['EMPLID'])."'";
+								$res = $this->$extDbConnection->sql_query($fac_dept_sql);
+								$trow_subquery = $this->$extDbConnection->sql_fetchrow($res);
+
+								$add_group_list = [];
+								while($trow_subquery){
+									$add_group = $this->dept2gpId($trow_subquery['DEPT'],$group_list);
+									if($add_group != -1)
+										array_push($add_group_list, $add_group);
+									$trow_subquery = $this->$extDbConnection->sql_fetchrow($res);
+								}
+
+
+								if(!in_array($fac_gp_id, $subd_groups)){
+									group_user_add($fac_gp_id, $user_id,false,false,true);
+								}
+								//add new groups
+								foreach($add_group_list as $curr_grp){
+									if(!in_array($curr_grp,$subd_groups)){
+										group_user_add($curr_grp, $user_id);	
+									}
+								}
+								array_push($add_group_list, $fac_gp_id);
+								//remove old groups
+								foreach($subd_groups as $curr_grp){
+									// if($curr_grp != $fac_gp_id){
+									// 	group_user_del($curr_grp,$user_id);
+									// }
+									if(!in_array($curr_grp,$add_group_list)){
+										group_user_del($curr_grp,$user_id);
+									}
+								}
+							}
+							else{
+								//found no-where but account exists
 								foreach($subd_groups as $curr_grp){
 									group_user_del($curr_grp,$user_id);
 								}		
-							}		
-						}
+							}
+					}
+
+
+					
 						
 					}
 				}	
@@ -291,11 +376,25 @@ class listener implements EventSubscriberInterface
 		return $grouplist;
 	}
 
+	public function get_user_id($email_id){
+		$user_id = -1;
+		$sql = "SELECT user_id
+		        FROM " . USERS_TABLE . " WHERE user_email='" . strtolower($email_id) ."'";
+		global $db;
+		$result = $db->sql_query($sql);
+		$row = $db->sql_fetchrow($result);
+		if($row){
+			$user_id = $row['user_id'];
+		}
+		return $user_id;        
+	}
+
 	public function create_new_user($email_id,$default_grp_id){
 		$this->dumpy($email_id);
 		$uname = (explode('@',$email_id))[0];
-		$pass = md5(rand(0, 100) . time());
-		$pass = substr($pass, 0, rand(8, 12));
+		// $pass = md5(rand(0, 100) . time());
+		// $pass = substr($pass, 0, rand(8, 12));
+		$pass = $uname . "@bits";
 		$user_ip = $user->ip;
 		$user_type = USER_NORMAL;
 		$user_row = array(
